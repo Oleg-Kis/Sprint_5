@@ -15,7 +15,7 @@ def driver():
 def log_in(driver):
     driver.find_element(*Locators.BUT_OFFICE).click()
     driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
-    driver.find_element(*Locators.PASSWORD_ENTER).send_keys(valid_password)
+    driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
     driver.find_element(*Locators.BUT_ENTER_ACC).click()
     return driver
 

@@ -8,7 +8,7 @@ class TestLoginAccount:
     def test_login_but_account_office(self, driver):
         driver.find_element(*Locators.BUT_OFFICE).click()
         driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
-        driver.find_element(*Locators.PASSWORD_ENTER).send_keys(valid_password)
+        driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
@@ -21,7 +21,7 @@ class TestLoginAccount:
     def test_login_but_enter_account(self, driver):
         driver.find_element(*Locators.BUT_GO_ACC).click()
         driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
-        driver.find_element(*Locators.PASSWORD_ENTER).send_keys(valid_password)
+        driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
@@ -36,7 +36,7 @@ class TestLoginAccount:
         driver.find_element(*Locators.BUT_REG).click()
         driver.find_element(*Locators.BUT_ENTER).click()
         driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
-        driver.find_element(*Locators.PASSWORD_ENTER).send_keys(valid_password)
+        driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
@@ -53,7 +53,7 @@ class TestLoginAccount:
         driver.find_element(*Locators.BUT_REG).click()
         driver.find_element(*Locators.BUT_ENTER).click()
         driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
-        driver.find_element(*Locators.PASSWORD_ENTER).send_keys(valid_password)
+        driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
@@ -68,7 +68,7 @@ class TestLoginAccount:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Выход']")))
         driver.find_element(By.XPATH, ".//button[text()='Выход']").click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//h2[text()='Вход']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ENTER_LOGO))
 
         driver.find_element(*Locators.LOGO_STELLAR).click()
 

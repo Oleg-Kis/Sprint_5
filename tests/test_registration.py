@@ -11,13 +11,13 @@ class TestRegistration:
         name, email, password = generate_reg_data()
         driver.find_element(*Locators.NAME).send_keys(name)
         driver.find_element(*Locators.EMAIL_REG).send_keys(email)
-        driver.find_element(*Locators.PASSWORD_REG).send_keys(password)
+        driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.BUT_REG_END).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//h2[text()='Вход']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ENTER_LOGO))
 
         driver.find_element(*Locators.EMAIL_ENTER).send_keys(email)
-        driver.find_element(*Locators.PASSWORD_ENTER).send_keys(password)
+        driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
@@ -31,7 +31,7 @@ class TestRegistration:
         name, email, password = generate_reg_data()
         driver.find_element(*Locators.NAME).send_keys(name)
         driver.find_element(*Locators.EMAIL_REG).send_keys(email)
-        driver.find_element(*Locators.PASSWORD_REG).send_keys(no_valid_password)
+        driver.find_element(*Locators.PASSWORD).send_keys(no_valid_password)
         driver.find_element(*Locators.BUT_REG_END).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//p[@class='input__error text_type_main-default']")))
