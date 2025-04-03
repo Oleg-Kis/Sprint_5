@@ -34,8 +34,8 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD).send_keys(no_valid_password)
         driver.find_element(*Locators.BUT_REG_END).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//p[@class='input__error text_type_main-default']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TITLE_INCORRECT_PASS))
 
-        text_error = driver.find_element(By.XPATH, ".//p[@class='input__error text_type_main-default']").text
+        text_error = driver.find_element(*Locators.TITLE_INCORRECT_PASS).text
 
         assert text_error == 'Некорректный пароль'

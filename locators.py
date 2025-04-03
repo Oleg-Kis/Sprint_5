@@ -24,3 +24,4 @@ class Locators:
     ENTER_LOGO = (By.XPATH, ".//h2[text()='Вход']") #надпись Вход на странице авторизации
     BUT_ORDER = (By.XPATH, ".//button[text()='Оформить заказ']") #кнопка Оформить заказ
     TEXT_PROFILE = (By.XPATH, ".//a[text()='Профиль']") #надпись Профиль в личном кабинете
+    TITLE_INCORRECT_PASS = (By.XPATH, ".//p[@class='input__error text_type_main-default']") #надпись Некорректный пароль
