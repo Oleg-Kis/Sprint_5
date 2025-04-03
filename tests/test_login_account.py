@@ -15,7 +15,7 @@ class TestLoginAccount:
 
         driver.find_element(*Locators.BUT_OFFICE).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
-        email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
     def test_login_but_enter_account(self, driver):
@@ -28,7 +28,7 @@ class TestLoginAccount:
 
         driver.find_element(*Locators.BUT_OFFICE).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
-        email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
     def test_login_but_enter_reg_window(self, driver):
@@ -43,7 +43,7 @@ class TestLoginAccount:
 
         driver.find_element(*Locators.BUT_OFFICE).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
-        email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
     def test_login_but_enter_recovery_window(self, driver):
@@ -60,7 +60,7 @@ class TestLoginAccount:
 
         driver.find_element(*Locators.BUT_OFFICE).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
-        email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
     def test_exit_office(self, driver, log_in):
@@ -80,6 +80,6 @@ class TestLoginAccount:
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
 
-        log_mail = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        log_mail = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
 
         assert log_mail == login

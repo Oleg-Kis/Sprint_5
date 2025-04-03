@@ -25,3 +25,4 @@ class Locators:
     BUT_ORDER = (By.XPATH, ".//button[text()='Оформить заказ']") #кнопка Оформить заказ
     TEXT_PROFILE = (By.XPATH, ".//a[text()='Профиль']") #надпись Профиль в личном кабинете
     TITLE_INCORRECT_PASS = (By.XPATH, ".//p[@class='input__error text_type_main-default']") #надпись Некорректный пароль
+    LOGIN_IN_OFFICE = (By.XPATH, ".//input[contains(@value,'@')]") #поле Логин в личном кабинете

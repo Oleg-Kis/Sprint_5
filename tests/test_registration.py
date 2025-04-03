@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -24,7 +23,7 @@ class TestRegistration:
 
         driver.find_element(*Locators.BUT_OFFICE).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
-        login_email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
+        login_email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert login_email == email
 
     def test_reg_no_valid_password(self,driver, pre_reg):
