@@ -26,3 +26,4 @@ class Locators:
     TEXT_PROFILE = (By.XPATH, ".//a[text()='Профиль']") #надпись Профиль в личном кабинете
     TITLE_INCORRECT_PASS = (By.XPATH, ".//p[@class='input__error text_type_main-default']") #надпись Некорректный пароль
     LOGIN_IN_OFFICE = (By.XPATH, ".//input[contains(@value,'@')]") #поле Логин в личном кабинете
+    BUT_EXIT = (By.XPATH, ".//button[text()='Выход']") #кнопка Выход в личном кабинете

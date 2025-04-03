@@ -65,8 +65,8 @@ class TestLoginAccount:
 
     def test_exit_office(self, driver, log_in):
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Выход']")))
-        driver.find_element(By.XPATH, ".//button[text()='Выход']").click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_EXIT))
+        driver.find_element(*Locators.BUT_EXIT).click()
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ENTER_LOGO))
 
