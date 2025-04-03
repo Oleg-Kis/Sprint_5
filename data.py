@@ -1,0 +1,11 @@
+main_site = 'https://stellarburgers.nomoreparties.site/'
+login = 'olegkiselev_18_123@yandex.ru'
+valid_password = 'kiselev'
+no_valid_password = 'kis'
+
+incorrect_pass = 'Некорректный пароль'
+go_to_acc = 'Войти в аккаунт'
+put_burger = 'Соберите бургер'
+sauce = 'Соусы'
+topping = 'Начинки'
+bread = 'Булки'
