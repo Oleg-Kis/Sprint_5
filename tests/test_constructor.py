@@ -8,11 +8,11 @@ class TestConstructorTransition:
     def test_from_office_on_click_constructor(self, driver, log_in):
         driver.find_element(*Locators.BUT_OFFICE).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//a[text()='Профиль']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
 
         driver.find_element(*Locators.CONSTRUCTOR).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
 
         text = driver.find_element(By.XPATH, ".//h1[@class='text text_type_main-large mb-5 mt-10']").text
 
@@ -21,11 +21,11 @@ class TestConstructorTransition:
     def test_from_office_on_click_logo(self, driver, log_in):
         driver.find_element(*Locators.BUT_OFFICE).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//a[text()='Профиль']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
 
         driver.find_element(*Locators.LOGO_STELLAR).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
 
         text = driver.find_element(By.XPATH, ".//h1[@class='text text_type_main-large mb-5 mt-10']").text
 

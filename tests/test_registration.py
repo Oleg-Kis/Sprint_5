@@ -20,10 +20,10 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//button[text()='Оформить заказ']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//a[text()='Профиль']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
         login_email = driver.find_element(By.XPATH, ".//input[contains(@value,'@')]").get_attribute('value')
         assert login_email == email
 
