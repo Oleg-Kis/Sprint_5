@@ -6,7 +6,7 @@ from data import *
 class TestLoginAccount:
     def test_login_but_account_office(self, driver):
         driver.find_element(*Locators.BUT_OFFICE).click()
-        driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
+        driver.find_element(*Locators.EMAIL).send_keys(login)
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
@@ -19,7 +19,7 @@ class TestLoginAccount:
 
     def test_login_but_enter_account(self, driver):
         driver.find_element(*Locators.BUT_GO_ACC).click()
-        driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
+        driver.find_element(*Locators.EMAIL).send_keys(login)
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
@@ -34,7 +34,7 @@ class TestLoginAccount:
         driver.find_element(*Locators.BUT_GO_ACC).click()
         driver.find_element(*Locators.BUT_REG).click()
         driver.find_element(*Locators.BUT_ENTER).click()
-        driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
+        driver.find_element(*Locators.EMAIL).send_keys(login)
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
@@ -51,7 +51,7 @@ class TestLoginAccount:
         driver.find_element(*Locators.BUT_ENTER).click()
         driver.find_element(*Locators.BUT_REG).click()
         driver.find_element(*Locators.BUT_ENTER).click()
-        driver.find_element(*Locators.EMAIL_ENTER).send_keys(login)
+        driver.find_element(*Locators.EMAIL).send_keys(login)
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 

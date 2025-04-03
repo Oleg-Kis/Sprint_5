@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 class Locators:
     # регистрация
 
-    NAME = [By.XPATH, ".//label[text()='Имя']/"]  # поле Имя в окне регистрации
-    EMAIL_REG = (By.XPATH, ".//form/fieldset[2]/div/div/input")  # поле Email в окне регистрации
+    NAME = [By.XPATH, ".//label[contains(text(), 'Имя')]/following-sibling::input"]  # поле Имя в окне регистрации
+    EMAIL = (By.XPATH, ".//label[contains(text(), 'Email')]/following-sibling::input")  # поле Email в окне регистрации
     PASSWORD = (By.XPATH, ".//input[@name='Пароль']")  # поле Пароль
     BUT_REG_END = (By.XPATH, ".//button[text()='Зарегистрироваться']")  # кнопка Зарегестрироваться в окне регистрации
     # вход
@@ -15,7 +15,6 @@ class Locators:
     BUT_ENTER_ACC = (By.XPATH, ".//button[text()='Войти']")  # кнопка Войти на странице входа
     BUT_OFFICE = (By.XPATH, ".//a[@href='/account']")  # кнопка Личный Кабинет
     BUT_GO_ACC = (By.XPATH, ".//button[text()='Войти в аккаунт']")  # кнопка Войти в аккаунт
-    EMAIL_ENTER = (By.XPATH, ".//form/fieldset[1]/div/div/input")  # поле Email на старнице Вход
     LOGO_STELLAR = (By.XPATH, ".//a/parent::div[@class='AppHeader_header__logo__2D0X2']")  # логотип stellar burgers
     CONSTRUCTOR = (By.XPATH, ".//a[@class='AppHeader_header__link__3D_hX' and @href='/']")  # кнопка Конструктор
     BREAD = (By.XPATH, ".//span[text()='Булки']/parent::div")  # вкладка Булки
