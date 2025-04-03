@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import Locators
@@ -14,7 +13,7 @@ class TestConstructorTransition:
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
 
-        text = driver.find_element(By.XPATH, ".//h1[@class='text text_type_main-large mb-5 mt-10']").text
+        text = driver.find_element(*Locators.TEXT_PUT_BURGER).text
 
         assert text == 'Соберите бургер'
 
@@ -27,29 +26,29 @@ class TestConstructorTransition:
 
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
 
-        text = driver.find_element(By.XPATH, ".//h1[@class='text text_type_main-large mb-5 mt-10']").text
+        text = driver.find_element(*Locators.TEXT_PUT_BURGER).text
 
         assert text == 'Соберите бургер'
 
     def test_click_ingredient_sauces(self, driver):
         driver.find_element(*Locators.SAUCES).click()
-        link = driver.find_element(By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span").text
+        link = driver.find_element(*Locators.ACTIVE_TAB).text
 
         assert link == 'Соусы'
 
     def test_click_ingredient_toppings(self, driver):
         driver.find_element(*Locators.TOPPINGS).click()
-        link = driver.find_element(By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span").text
+        link = driver.find_element(*Locators.ACTIVE_TAB).text
 
         assert link == 'Начинки'
 
     def test_click_ingredient_bread(self, driver):
         driver.find_element(*Locators.SAUCES).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span[text()='Соусы']")))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ACTIVE_TAB_SAUCES))
 
         driver.find_element(*Locators.BREAD).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span[text()='Булки']")))
-        link = driver.find_element(By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span").text
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ACTIVE_TAB_BREAD))
+        link = driver.find_element(*Locators.ACTIVE_TAB).text
 
         assert link == 'Булки'

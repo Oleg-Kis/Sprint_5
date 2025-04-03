@@ -27,3 +27,7 @@ class Locators:
     TITLE_INCORRECT_PASS = (By.XPATH, ".//p[@class='input__error text_type_main-default']") #надпись Некорректный пароль
     LOGIN_IN_OFFICE = (By.XPATH, ".//input[contains(@value,'@')]") #поле Логин в личном кабинете
     BUT_EXIT = (By.XPATH, ".//button[text()='Выход']") #кнопка Выход в личном кабинете
+    TEXT_PUT_BURGER = (By.XPATH, ".//h1[@class='text text_type_main-large mb-5 mt-10']") #надпись Соберите бургер
+    ACTIVE_TAB = (By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span") #активная вкладка Булки/Соусы/Начинки
+    ACTIVE_TAB_SAUCES = (By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span[text()='Соусы']") #активная вкладка Соусы
+    ACTIVE_TAB_BREAD = (By.XPATH, ".//div[contains(@class,'tab_tab_type_current')]/span[text()='Булки']") #активная вкладка Булки

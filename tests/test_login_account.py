@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import Locators
@@ -72,7 +71,7 @@ class TestLoginAccount:
 
         driver.find_element(*Locators.LOGO_STELLAR).click()
 
-        text_but = driver.find_element(By.XPATH, ".//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']").text
+        text_but = driver.find_element(*Locators.BUT_GO_ACC).text
         assert text_but == 'Войти в аккаунт'
 
     def test_go_office_click_but_office(self,driver, log_in):
