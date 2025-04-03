@@ -10,10 +10,10 @@ class TestLoginAccount:
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
         email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
@@ -23,10 +23,10 @@ class TestLoginAccount:
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
         email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
@@ -38,10 +38,10 @@ class TestLoginAccount:
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
         email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
@@ -55,29 +55,29 @@ class TestLoginAccount:
         driver.find_element(*Locators.PASSWORD).send_keys(valid_password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
         email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert email == login
 
     def test_exit_office(self, driver, log_in):
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_EXIT))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_EXIT))
         driver.find_element(*Locators.BUT_EXIT).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ENTER_LOGO))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.ENTER_LOGO))
 
         driver.find_element(*Locators.LOGO_STELLAR).click()
 
         text_but = driver.find_element(*Locators.BUT_GO_ACC).text
-        assert text_but == 'Войти в аккаунт'
+        assert text_but == go_to_acc
 
     def test_go_office_click_but_office(self,driver, log_in):
         driver.find_element(*Locators.BUT_OFFICE).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
 
         log_mail = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
 

@@ -13,16 +13,16 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.BUT_REG_END).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.ENTER_LOGO))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.ENTER_LOGO))
 
         driver.find_element(*Locators.EMAIL).send_keys(email)
         driver.find_element(*Locators.PASSWORD).send_keys(password)
         driver.find_element(*Locators.BUT_ENTER_ACC).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.BUT_ORDER))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER))
 
         driver.find_element(*Locators.BUT_OFFICE).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TEXT_PROFILE))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TEXT_PROFILE))
         login_email = driver.find_element(*Locators.LOGIN_IN_OFFICE).get_attribute('value')
         assert login_email == email
 
@@ -33,8 +33,8 @@ class TestRegistration:
         driver.find_element(*Locators.PASSWORD).send_keys(no_valid_password)
         driver.find_element(*Locators.BUT_REG_END).click()
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.TITLE_INCORRECT_PASS))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.TITLE_INCORRECT_PASS))
 
         text_error = driver.find_element(*Locators.TITLE_INCORRECT_PASS).text
 
-        assert text_error == 'Некорректный пароль'
+        assert text_error == incorrect_pass
